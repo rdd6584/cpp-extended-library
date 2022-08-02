@@ -1,3 +1,6 @@
+/* MIT License
+Copyright (c) 2022 rdd6584 */
+
 #ifndef CPP_EXTENDED_STL_FRACTION_
 #define CPP_EXTENDED_STL_FRACTION_
 
@@ -35,16 +38,7 @@ class Fraction {
         const ll& gcd_value = std::gcd(numerator, denominator);
         return Fraction(numerator / gcd_value, denominator / gcd_value);
     }
-    static void ToIrreducible(Fraction& value) {
-        const ll& gcd_value = std::gcd(value.numerator, value.denominator);
-        value.numerator /= gcd_value;
-        value.denominator /= gcd_value;
-    }
-    static Fraction GetIrreducible(const Fraction& value) {
-        const ll& gcd_value = std::gcd(value.numerator, value.denominator);
-        return Fraction(value.numerator / gcd_value,
-                        value.denominator / gcd_value);
-    }
+
     bool operator<(const Fraction& other) const {
         return numerator * other.denominator < other.numerator * denominator;
     }
@@ -86,6 +80,18 @@ class Fraction {
     }
     std::string GetString() const {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
+    }
+
+    // static
+    static void ToIrreducible(Fraction& value) {
+        const ll& gcd_value = std::gcd(value.numerator, value.denominator);
+        value.numerator /= gcd_value;
+        value.denominator /= gcd_value;
+    }
+    static Fraction GetIrreducible(const Fraction& value) {
+        const ll& gcd_value = std::gcd(value.numerator, value.denominator);
+        return Fraction(value.numerator / gcd_value,
+                        value.denominator / gcd_value);
     }
 };
 }  // namespace cpp_extended_stl
