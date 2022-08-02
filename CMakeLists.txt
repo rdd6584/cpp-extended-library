@@ -5,4 +5,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 
 include_directories(src/cpp_extended_stl)
-add_executable(unit_test test/unit_test.cpp src/cpp_extended_stl/fraction.hpp)
+
+add_executable(unit_test
+    test/unit_test.cpp
+    src/cpp_extended_stl/fraction.hpp
+    src/cpp_extended_stl/combinatorics.hpp
+)
