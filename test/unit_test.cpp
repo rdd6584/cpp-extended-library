@@ -2,8 +2,8 @@
 #include <cstdio>
 #include "combinatorics.hpp"
 #include "fraction.hpp"
-typedef cpp_extended_stl::Fraction Fraction;
-typedef cpp_extended_stl::Combinatorics Combinatorics;
+typedef cpp_extended_library::Fraction Fraction;
+typedef cpp_extended_library::Combinatorics Combinatorics;
 
 void FractionTest() {
     Fraction af, bf;

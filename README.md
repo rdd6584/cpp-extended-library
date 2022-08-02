@@ -1,2 +1,2 @@
-# cpp-extended-stl
-Custom extended C++ STL library, for algorithm problem solver.
+# cpp-extended-library
+Custom cpp-extended-library, for algorithm problem solver.

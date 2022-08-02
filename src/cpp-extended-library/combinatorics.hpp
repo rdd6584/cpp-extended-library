@@ -1,12 +1,12 @@
 /* MIT License
 Copyright (c) 2022 rdd6584 */
 
-#ifndef CPP_EXTENDED_STL_COMBINATORICS_
-#define CPP_EXTENDED_STL_COMBINATORICS_
+#ifndef CPP_EXTENDED_LIBRARY_COMBINATORICS_
+#define CPP_EXTENDED_LIBRARY_COMBINATORICS_
 
 #include <vector>
 
-namespace cpp_extended_stl {
+namespace cpp_extended_library {
 
 class Combinatorics {
     typedef long long ll;
@@ -111,6 +111,6 @@ class Combinatorics {
         return FastPower(number, modular - 2, modular);
     }
 };
-}  // namespace cpp_extended_stl
+}  // namespace cpp_extended_library
 
-#endif  // CPP_EXTENDED_STL_COMBINATORICS_
+#endif  // CPP_EXTENDED_LIBRARY_COMBINATORICS_

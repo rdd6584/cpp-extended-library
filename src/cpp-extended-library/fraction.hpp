@@ -1,14 +1,14 @@
 /* MIT License
 Copyright (c) 2022 rdd6584 */
 
-#ifndef CPP_EXTENDED_STL_FRACTION_
-#define CPP_EXTENDED_STL_FRACTION_
+#ifndef CPP_EXTENDED_LIBRARY_FRACTION_
+#define CPP_EXTENDED_LIBRARY_FRACTION_
 
 #include <numeric>
 #include <string>
 #include <vector>
 
-namespace cpp_extended_stl {
+namespace cpp_extended_library {
 
 class Fraction {
     typedef long long ll;
@@ -94,6 +94,6 @@ class Fraction {
                         value.denominator / gcd_value);
     }
 };
-}  // namespace cpp_extended_stl
+}  // namespace cpp_extended_library
 
-#endif  // CPP_EXTENDED_STL_FRACTION_
+#endif  // CPP_EXTENDED_LIBRARY_FRACTION_
