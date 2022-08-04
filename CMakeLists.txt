@@ -10,4 +10,5 @@ add_executable(unit_test
     test/unit_test.cpp
     src/cpp-extended-library/fraction.hpp
     src/cpp-extended-library/combinatorics.hpp
+    src/cpp-extended-library/modular_arithmetic.hpp
 )
