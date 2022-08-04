@@ -17,6 +17,7 @@ class Fraction {
     ll numerator, denominator;
     Fraction() { Fraction(0, 1); }
     Fraction(const ll& value) { Fraction(value, 1); }
+
     Fraction(const std::pair<ll, ll>& value) {
         numerator = value.first, denominator = value.second;
     }
@@ -45,19 +46,32 @@ class Fraction {
     bool operator>(const Fraction& other) const {
         return numerator * other.denominator > other.numerator * denominator;
     }
-    bool operator==(const Fraction& other) const {
+    bool operator==(Fraction other) const {
         const Fraction& me = GetIrreducible();
-        const Fraction& you = other.GetIrreducible();
+        other.ToIrreducible();
 
-        return me.numerator == you.numerator &&
-               me.denominator == you.denominator;
+        return me.numerator == other.numerator &&
+               me.denominator == other.denominator;
     }
+    bool operator!=(const Fraction& other) const {
+        return !(*this == other);
+    }
+    bool operator<=(const Fraction& other) const {
+        return !(*this > other);
+    }
+    bool operator>=(const Fraction& other) const {
+        return !(*this < other);
+    }
+
     Fraction operator+(const Fraction& other) const {
         Fraction result(
             numerator * other.denominator + other.numerator * denominator,
             denominator * other.denominator);
         ToIrreducible(result);
         return result;
+    }
+    Fraction operator-() const {
+        return Fraction(-numerator, denominator);
     }
     Fraction operator-(const Fraction& other) const {
         Fraction result(
@@ -78,8 +92,25 @@ class Fraction {
         ToIrreducible(result);
         return result;
     }
-    std::string GetString() const {
+
+    Fraction operator+=(const Fraction& other) {
+        return *this = *this + other;
+    }
+    Fraction operator-=(const Fraction& other) {
+        return *this = *this - other;
+    }
+    Fraction operator*=(const Fraction& other) {
+        return *this = *this * other;
+    }
+    Fraction operator/=(const Fraction& other) {
+        return *this = *this / other;
+    }
+
+    std::string String() const {
         return std::to_string(numerator) + "/" + std::to_string(denominator);
+    }
+    bool IsInfinity() const {
+        return denominator == 0;
     }
 
     // static

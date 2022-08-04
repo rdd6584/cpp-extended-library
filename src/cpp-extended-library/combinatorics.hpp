@@ -83,12 +83,12 @@ class Combinatorics {
     }
 
     // Please, ensure you did InitializeFactorialWithInverse(greater than, or equal to 2 * n);
-    ll CatalanNumber(int n) {
+    ll CatalanNumber(int n) const {
         return Combination(2 * n, n) * GetInverse(n + 1) % modular_;
     }
 
     // Please, ensure you did InitializeFactorialWithInverse(greater than, or equal to n);
-    ll DerangementNumber(int n) {
+    ll DerangementNumber(int n) const {
         ll result = 0;
 
         for (int k = 0, sign = 1; k <= n; k++, sign = -sign)
