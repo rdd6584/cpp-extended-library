@@ -4,3 +4,6 @@ ColumnLimit: 0
 UseTab: Never
 BinPackParameters: false
 BinPackArguments: false
+#AfterOverloadedOperator: false
+#PackConstructorInitializers: NextLine
+ConstructorInitializerIndentWidth: 8
